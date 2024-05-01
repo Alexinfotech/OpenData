@@ -1,0 +1,52 @@
+<style>
+  /* Stile base per i link della navigazione */
+  .nav-link {
+      transition: color 0.3s ease, transform 0.3s ease; /* Transizione fluida per colore e trasformazione */
+      color: #0056b3; /* Colore di base dei link */
+      text-decoration: none; /* Rimuove il sottolineamento dei link */
+  }
+
+  /* Stile quando il mouse passa sopra il link */
+  .nav-link:hover {
+      color: white; /* Cambia il colore del testo in bianco */
+      transform: scale(1.1); /* Ingrandisce il link */
+      text-decoration: none; /* Assicurati che il sottolineamento sia rimosso */
+  }
+</style>
+
+<h2 class="text-center"></h2>
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="loadContent()"></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="loadContent('file1.html')">Approfondimento sugli Open Data in Italia</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="loadContent('file2.html')">Approfondimento sull'Utilizzo degli Open Data per i Cittadini</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="loadContent('file3.html')">Utilizzo degli Open Data a Livello Informatico</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="loadContent('file4.html')">Tipi di Dati Disponibili nei Settori Open Data Italiani </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="loadContent('file5.html')">Manipolazione degli Open Data</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="loadContent('file6.html')">Formatti dei Dati Disponibili nei Settori Open Data</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  href="https://www.dati.gov.it/" target="_blank">dati.gov.it</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  href="https://www.arera.it/dati-e-statistiche" target="_blank">ARERA</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"  href="https://www.opencivitas.it/it/open-data" target="_blank">OpenCivitas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="loadContent('questionario.html')">Ti senti pronto? Fai il questionario!</a>
+  </li>
+</ul>

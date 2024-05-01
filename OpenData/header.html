@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Data Italiani</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Previene lo scroll orizzontale */
+            overflow-y: auto; /* Permette lo scroll verticale */
+        }
+
+        .header {
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed; /* Posizionamento fisso */
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px; /* Altezza fissa */
+            z-index: 1000; /* Al di sopra di altri elementi */
+        }
+
+        .home-link {
+            margin-left: auto; /* Sposta il link a destra */
+            font-size: 30px; /* Dimensione del font */
+            color: red; /* Colore del testo in rosso */
+            text-decoration: none; /* Rimozione del sottolineato */
+        }
+
+        .scroller-container {
+            position: absolute;
+            left: 20px; /* Distanza dal bordo sinistro */
+            right: 140px; /* Distanza dal link Home */
+            top: 0;
+            height: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .scroller {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 24px;
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="scroller-container">
+            <div class="scroller">
+                Open Data Italiani - scopri gli open data del governo, le informazioni di ARERA, i dati economici del MEF e molto altro.
+            </div>
+        </div>
+        <a href="#" class="home-link" onclick="window.location.reload(true);">Home</a>
+    </header>
+</body>
+</html>

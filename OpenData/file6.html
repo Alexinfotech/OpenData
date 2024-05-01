@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Open Data Italiani</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #0056b3;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    p, ul {
+      line-height: 1.6;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    li::before {
+      content: "•";
+      color: #0056b3;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    .guide-link {
+    display: inline-block; /* Aggiungi questo per consentire la trasformazione */
+    transition: color 0.1s ease, transform 0.1s ease; /* Aggiusta la durata se necessario */
+    color: #0056b3; /* Colore di base del link */
+    text-decoration: none; /* Rimuove il sottolineamento */
+}
+
+.guide-link:hover {
+    color: #ff4500; /* Cambia il colore del link */
+    transform: scale(1.2); /* Ingrandisce leggermente il link */
+    text-decoration: underline; /* Aggiunge un sottolineamento per enfatizzare l'hover */
+}
+.home-link {
+    color: red;
+}
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Formati dei Dati Disponibili nei Settori Open Data</h1>
+  <p>L'accessibilità e l'utilizzo degli open data sono fortemente influenzati dai formati in cui questi dati vengono pubblicati. La scelta del formato ha implicazioni dirette sulla facilità di uso, sulla possibilità di integrazione con altri dati e sulla varietà di applicazioni che possono essere sviluppate utilizzando tali dati. Ecco i formati più comuni utilizzati nella pubblicazione di open data:</p>
+
+  <h2>CSV (Comma-Separated Values)</h2>
+  <p>Il formato CSV è uno dei più semplici e comuni per la distribuzione di open data. Consente di memorizzare i dati tabellari (numeri e testo) in forma di testo semplice. Ogni linea del file corrisponde a una riga della tabella, e le colonne sono separate da una virgola o altro delimitatore. Questo formato è facilmente manipolabile e supportato da quasi tutti i sistemi di analisi dati.</p>
+  <div id="csvContent">
+    <a href="#" onclick="loadGuide('csvContent')" class="guide-link">Caratteristiche Principali del CSV</a>
+    <div class="guide" style="display: none;">
+      <ul>
+        <li><strong>Semplicità:</strong> I file CSV sono facili da generare e leggere sia per gli umani che per le macchine, il che li rende una scelta popolare per l'esportazione di dati.</li>
+        <li><strong>Compatibilità:</strong> Sono ampiamente supportati da quasi tutti i tipi di software di database e fogli di calcolo, inclusi Microsoft Excel, Google Sheets, e sistemi di database SQL.</li>
+        <li><strong>Flessibilità:</strong> Nonostante la struttura semplice, i file CSV possono essere usati per rappresentare dati relativamente complessi.</li>
+      </ul>
+      <p><strong>Struttura di un File CSV:</strong></p>
+      <pre>
+        nome,cognome,età
+        Mario,Rossi,30
+        Luca,Bianchi,25
+        Giulia,Verdi,22
+      </pre>
+      <p><strong>Manipolazione di CSV:</strong></p>
+      <ul>
+        <li><strong>Lettura e Scrittura:</strong> Librerie software come <code>pandas</code> in Python facilitano la lettura, la manipolazione e la scrittura di file CSV. Altri linguaggi come Java, PHP, e JavaScript offrono funzioni integrate o librerie di terze parti per gestire i file CSV.</li>
+        <li><strong>Problemi Comuni:</strong> Tra gli inconvenienti dell'uso di CSV ci sono la mancanza di standardizzazione nell'escape di caratteri speciali e la difficoltà nel rappresentare dati complessi o molto strutturati.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>JSON (JavaScript Object Notation)</h2>
+  <p>JSON è un formato leggero di interscambio dati, facile da leggere e scrivere per gli umani, e semplice da analizzare e generare per le macchine. È utilizzato comunemente per scambi di dati su Internet e è particolarmente utile per le applicazioni web che consumano API.</p>
+  <div id="jsonContent">
+    <a href="#" onclick="loadGuide('jsonContent')" class="guide-link">Caratteristiche Principali di JSON</a>
+    <div class="guide" style="display: none;">
+      <ul>
+        <li><strong>Leggibilità:</strong> JSON è strutturato in modo che sia facile da leggere e scrivere per gli esseri umani.</li>
+        <li><strong>Interoperabilità:</strong> Nonostante le sue radici in JavaScript, JSON è un formato indipendente dal linguaggio, il che significa che può essere generato e parsato da molti linguaggi di programmazione.</li>
+        <li><strong>Efficienza:</strong> Il formato è conciso, non richiede molto overhead, quindi è ideale per il trasferimento dati su reti.</li>
+      </ul>
+      <p><strong>Struttura di JSON:</strong></p>
+      <pre>
+        {
+          "nome": "Mario",
+          "età": 30,
+          "isStudente": false,
+          "corsi": ["Matematica", "Inglese", "Storia"],
+          "indirizzo": {
+            "città": "Roma",
+            "cap": "00100"
+          }
+        }
+      </pre>
+      <p><strong>Utilizzo di JSON:</strong></p>
+      <ul>
+        <li>JSON è utilizzato per vari scopi, inclusi scambio di dati tra client e server in applicazioni web, configurazione e impostazioni in molti software, e serializzazione e deserializzazione di strutture dati complesse.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>XML (eXtensible Markup Language)</h2>
+  <p>XML è un linguaggio di markup flessibile che permette di definire il formato di documenti con marcatori strutturati. È ampiamente utilizzato in vari ambiti dell'informatica per la rappresentazione di dati strutturati come configurazioni di software, trasmissioni di dati tra sistemi diversi e molto altro.</p>
+  <div id="xmlContent">
+    <a href="#" onclick="loadGuide('xmlContent')" class="guide-link">Caratteristiche Principali di XML</a>
+    <div class="guide" style="display: none;">
+      <ul>
+        <li><strong>Estensibilità:</strong> Gli utenti possono creare i propri tag personalizzati, il che rende XML estremamente adattabile a diverse esigenze e scenari.</li>
+        <li><strong>Separazione tra contenuto e presentazione:</strong> XML si occupa solo di trasportare i dati, mentre la presentazione di questi dati è gestita da altri linguaggi come XSL.</li>
+        <li><strong>Validità:</strong> I documenti XML possono essere validati usando DTD o XML Schema, che assicurano che i dati rispettino una struttura definita.</li>
+      </ul>
+      <p><strong>Struttura di XML:</strong></p>
+      <pre>
+        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        &lt;libro&gt;
+          &lt;titolo&gt;Il Nome della Rosa&lt;/titolo&gt;
+          &lt;autore&gt;Umberto Eco&lt;/autore&gt;
+          &lt;annoPubblicazione&gt;1980&lt;/annoPubblicazione&gt;
+        &lt;/libro&gt;
+      </pre>
+      <p><strong>Utilizzo di XML:</strong></p>
+      <ul>
+        <li>XML è utilizzato per vari scopi, inclusi configurazione di software, trasferimento dati tra sistemi diversi, e storage di dati complessi.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  // Funzione per caricare dinamicamente la guida utente al click
+  function loadGuide(guideId) {
+    // Nascondi tutte le guide
+    var guides = document.querySelectorAll('.guide');
+    guides.forEach(function(guide) {
+      guide.style.display = 'none';
+    });
+
+    // Mostra solo la guida richiesta
+    var selectedGuide = document.querySelector('#' + guideId + ' .guide');
+    if (selectedGuide.style.display === 'none') {
+      selectedGuide.style.display = 'block';
+    } else {
+      selectedGuide.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Approfondimento sugli Open Data in Italia</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="stile/styles.css" rel="stylesheet"> <!-- Importa il file CSS -->
+<style>
+.guide-link {
+    display: inline-block; /* Aggiungi questo per consentire la trasformazione */
+    transition: color 0.1s ease, transform 0.1s ease; /* Aggiusta la durata se necessario */
+    color: #0056b3; /* Colore di base del link */
+    text-decoration: none; /* Rimuove il sottolineamento */
+}
+
+.guide-link:hover {
+    color: #ff4500; /* Cambia il colore del link */
+    transform: scale(0.9); /* Ingrandisce leggermente il link */
+    text-decoration: underline; /* Aggiunge un sottolineamento per enfatizzare l'hover */
+}
+.home-link {
+    color: red;
+}
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Approfondimento sugli Open Data in Italia</h1>
+  
+  <p>In Italia, l'open data è fortemente promosso da enti governativi attraverso il portale nazionale <a href="https://www.dati.gov.it/" class="guide-link" target="_blank">dati.gov.it</a>, che funge da catalogo nazionale dei metadati relativi ai dati aperti rilasciati dalle pubbliche amministrazioni. Questo portale è gestito dall'Agenzia per l'Italia Digitale (AgID), che è il centro di competenza nazionale per i dati aperti, operando in linea con il Codice dell’Amministrazione Digitale e la direttiva PSI (Public Sector Information).</p>
+  
+  <h2>Funzione degli Open Data per la Trasparenza e l'Innovazione</h2>
+  <p>I dati aperti vengono resi disponibili con licenze che permettono un'ampia riutilizzabilità, inclusi usi commerciali, e sono accessibili in formati digitali aperti. AgID non solo gestisce il catalogo ma promuove anche l'utilizzo e la valorizzazione di questi dati attraverso seminari e linee guida, con l'obiettivo di incrementare la trasparenza e supportare l'innovazione digitale.</p>
+  
+  <h2>ARERA e il Contributo agli Open Data</h2>
+  <p>L'Autorità di Regolazione per Energia Reti e Ambiente <a href="https://www.arera.it/dati-e-statistiche" class="guide-link" target="_blank">(ARERA)</a> contribuisce anch'essa alla disponibilità di open data, particolarmente nei settori di energia, acqua e rifiuti. Questi dati sono cruciali per monitorare e regolamentare i servizi e le tariffe, promuovendo una maggiore trasparenza nel settore energetico e ambientale.</p>
+  
+  <h2>Risorse e Utilizzo degli Open Data</h2>
+  <p>Il Ministero dell'Economia e delle Finanze (MEF) attraverso il proprio portale <a href="https://www.opencivitas.it/it/open-data" class="guide-link" target="_blank">OpenCivitas</a> , fornisce dati economici e finanziari aperti che possono essere utilizzati per analisi economiche, ricerca accademica e sviluppo di soluzioni digitali.</p>
+  
+  <h4><a href="#" onclick="loadGuide()" class="guide-link">Certificazione dei dati pubblicati</a> <span style="font-size: 80%;">&#9660;</span></h4>
+  <div id="guide" style="display: none;">
+    <ul>
+      <li><strong>Agenzia per l'Italia Digitale (AgID)</strong>
+        <ul>
+          <li>AgID conduce controlli interni per verificare l'accuratezza, la coerenza e la completezza dei dati.</li>
+          <li>Assicura che i dati pubblicati siano conformi ai requisiti normativi nazionali, come il Codice dell’Amministrazione Digitale (CAD) e la direttiva PSI (Public Sector Information).</li>
+          <li>Segue standard di metadati per fornire informazioni dettagliate sui dataset pubblicati.</li>
+          <li>Monitora costantemente la qualità e l'utilizzo dei dati, intervenendo in caso di problemi o discrepanze.</li>
+        </ul>
+      </li>
+      <li><strong>Autorità di Regolazione per Energia Reti e Ambiente (ARERA)</strong>
+        <ul>
+          <li>ARERA conduce controlli interni per garantire l'accuratezza e la completezza dei dati nei settori di energia, acqua e rifiuti.</li>
+          <li>Assicura che i dati pubblicati siano conformi alle normative specifiche del settore.</li>
+          <li>Utilizza standard di metadati per fornire informazioni dettagliate sui dataset pubblicati.</li>
+          <li>Monitora la qualità dei dati e raccoglie feedback dalla comunità degli utenti.</li>
+        </ul>
+      </li>
+      <li><strong>Ministero dell'Economia e delle Finanze (MEF)</strong>
+        <ul>
+          <li>Il MEF conduce controlli interni per garantire l'accuratezza e la completezza dei dati economici e finanziari pubblicati su OpenCivitas.</li>
+          <li>Assicura che i dati siano conformi alle normative finanziarie nazionali e agli standard internazionali.</li>
+          <li>Utilizza standard di metadati per fornire informazioni dettagliate sui dataset pubblicati.</li>
+          <li>Monitora la qualità dei dati e raccoglie feedback dagli utenti per migliorare i processi di pubblicazione.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Questi sono i processi generali che gli enti potrebbero adottare per garantire la qualità e l'affidabilità dei dati pubblicati, anche se i dettagli specifici potrebbero variare.</p>
+  </div>
+
+  <p>In sintesi, gli open data italiani rappresentano una risorsa fondamentale per stimolare l'innovazione, aumentare la trasparenza e migliorare l'efficacia delle politiche pubbliche. Sia il portale dati.gov.it che i contributi specifici di enti come ARERA e MEF, dimostrano l'impegno dell'Italia verso una società più informata e un governo più aperto.</p>
+</div>
+<script>
+  // Funzione per caricare dinamicamente la guida utente al click
+  function loadGuide() {
+    var guideDiv = document.getElementById('guide');
+    if (guideDiv.style.display === 'none') {
+      guideDiv.style.display = 'block';
+    } else {
+      guideDiv.style.display = 'none';
+    }
+  }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

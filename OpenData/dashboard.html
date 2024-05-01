@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Open Data Italiani</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="stile/styles.css" rel="stylesheet"> <!-- Importa il file CSS -->
+  <style>
+    
+    .guide-link {
+    display: inline-block; /* Aggiungi questo per consentire la trasformazione */
+    transition: color 0.1s ease, transform 0.1s ease; /* Aggiusta la durata se necessario */
+    color: #0056b3; /* Colore di base del link */
+    text-decoration: none; /* Rimuove il sottolineamento */
+}
+
+.guide-link:hover {
+    color: #ff4500; /* Cambia il colore del link */
+    transform: scale(0.9); /* Ingrandisce leggermente il link */
+    text-decoration: underline; /* Aggiunge un sottolineamento per enfatizzare l'hover */
+}
+.home-link {
+    color: red;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Open Data Italiani</h1>
+     <!-- Aggiunta della guida utente che si apre dinamicamente -->
+     <h4><a href="#" onclick="loadGuide()" class="guide-link">Guida Utente - Sistema Informativo sui Dati Aperti</a> <span style="font-size: 80%;">&#9660;</span></h4>
+     <div id="guide" style="display: none;">
+       <h2>Guida Utente - Sistema Informativo sui Dati Aperti</h2>
+       <p>
+         Benvenuto nel nostro sistema informativo dedicato ai dati aperti italiani. Qui potrai esplorare e approfondire il mondo degli open data, scoprendo come possono essere utilizzati, quali vantaggi offrono e come accedervi.
+       </p>
+       <h3>Dashboard Iniziale:</h3>
+       <p>Quando accedi al sito, ti troverai (QUI) sulla nostra dashboard principale. Questa pagina fornisce una panoramica generale sugli open data italiani e i loro utilizzi.</p>
+       <h3>Navigazione tramite Menu:</h3>
+       <p>Utilizza il menu laterale per esplorare le diverse sezioni del nostro sistema informativo. Ogni voce di menu ti condurrà a una sezione dedicata, approfondendo un aspetto specifico degli open data.</p>
+       <h3>Approfondimenti e Collegamenti:</h3>
+       <p>All'interno di ogni sezione, troverai approfondimenti, esempi e collegamenti utili. Puoi esplorare ulteriormente argomenti di tuo interesse tramite questi collegamenti.</p>
+       <h3>Ritorno alla Dashboard:</h3>
+       <p>In qualsiasi momento,</p>
+       <p> puoi tornare alla dashboard principale cliccando sulla voce <strong><code class="home-link" style="font-size: 1.5em;">"Home"</code></strong> in alto a destra <span style="font-size: 2em;">&#x2191;</span></p>
+      </div>
+    <p>Gli open data, o dati aperti, sono informazioni messe a disposizione dal settore pubblico in formati liberamente accessibili e riutilizzabili da chiunque. In Italia, numerosi enti governativi e organismi pubblici forniscono open data per promuovere la trasparenza, l'innovazione e la partecipazione civica.</p>
+
+    <h2>A Cosa Servono gli Open Data per i Cittadini</h2>
+    <ul>
+      <li>Monitorare l'attività governativa: I dati su spesa pubblica, progetti, bilanci permettono di tenere sotto controllo l’operato delle istituzioni.</li>
+      <li>Partecipazione civica: Attraverso l'accesso ai dati, i cittadini possono partecipare più attivamente alle decisioni pubbliche e al dibattito civico.</li>
+      <li>Educazione: I dati statistici, culturali, ambientali e storici sono utili per scopi educativi, dalla ricerca scolastica all'educazione continua.</li>
+    </ul>
+
+    <h2>Utilizzo degli Open Data a Livello Informatico</h2>
+    <ul>
+      <li>Sviluppo di applicazioni: Sviluppatori possono creare applicazioni che sfruttano dati pubblici per servizi meteo, navigazione, informazioni locali, ecc.</li>
+      <li>Analisi e big data: Analisti e scienziati dei dati possono utilizzare open data per progetti di ricerca, analisi predittive, e molto altro.</li>
+      <li>Machine learning e AI: I set di dati possono essere utilizzati per allenare modelli di machine learning in vari ambiti, da quelli sanitari a quelli urbani.</li>
+    </ul>
+
+   
+
+    <p>Gli open data italiani rappresentano una risorsa preziosa per il miglioramento della società, l'innovazione tecnologica e la promozione della trasparenza e partecipazione civica. Il loro utilizzo e manipolazione responsabile può portare a significativi benefici a tutti i livelli della società.</p>
+  </div>
+
+  <script>
+    // Funzione per caricare dinamicamente la guida utente al click
+    function loadGuide() {
+      var guideDiv = document.getElementById('guide');
+      if (guideDiv.style.display === 'none') {
+        guideDiv.style.display = 'block';
+      } else {
+        guideDiv.style.display = 'none';
+      }
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

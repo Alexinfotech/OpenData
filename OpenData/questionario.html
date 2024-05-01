@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionario Open Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 1.1rem;
+        }
+        #risultato {
+            margin-top: 30px;
+        }
+        #risultato h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        #feedback {
+            font-size: 1.2rem;
+        }
+        #linkIscrizione, #invitoIscrizione {
+            font-size: 1.2rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Questionario Vero o Falso sugli Open Data</h1>
+    <form id="questionarioForm">
+        <div class="mb-3">
+            <p>1. Gli open data sono informazioni messe a disposizione solo dal settore privato. </p>
+            <input type="radio" name="q1" value="vero"> Vero<br>
+            <input type="radio" name="q1" value="falso"> Falso
+        </div>
+        <div class="mb-3">
+            <p>2. Gli open data italiani sono disponibili solo in formato CSV. </p>
+            <input type="radio" name="q2" value="vero"> Vero<br>
+            <input type="radio" name="q2" value="falso"> Falso
+        </div>
+        <div class="mb-3">
+            <p>3. I dati ambientali includono informazioni sulla qualità dell'aria, ma non sui livelli di inquinamento delle acque. </p>
+            <input type="radio" name="q3" value="vero"> Vero<br>
+            <input type="radio" name="q3" value="falso"> Falso
+        </div>
+        <div class="mb-3">
+            <p>4. L'ARERA contribuisce alla disponibilità di open data nei settori dell'energia, dell'acqua e dei rifiuti.</p>
+            <input type="radio" name="q4" value="vero"> Vero<br>
+            <input type="radio" name="q4" value="falso"> Falso
+        </div>
+        <div class="mb-3">
+            <p>5. Il Ministero dell'Economia e delle Finanze (MEF) non fornisce dati economici e finanziari aperti. </p>
+            <input type="radio" name="q5" value="vero"> Vero<br>
+            <input type="radio" name="q5" value="falso"> Falso
+        </div>
+        <div class="mb-3">
+            <p>6. AgID gestisce il portale dati.gov.it, il catalogo nazionale dei metadati relativi ai dati aperti rilasciati dalle pubbliche amministrazioni in Italia. </p>
+            <input type="radio" name="q6" value="vero"> Vero<br>
+            <input type="radio" name="q6" value="falso"> Falso
+        </div>
+        <div class="mb-3">
+            <p>7. JSON è un formato di scambio dati basato su immagini. </p>
+            <input type="radio" name="q7" value="vero"> Vero<br>
+            <input type="radio" name="q7" value="falso"> Falso
+        </div>
+        <div class="mb-3">
+            <p>8. I dati culturali e turistici non sono considerati tipi di dati disponibili nei settori Open Data Italiani. </p>
+            <input type="radio" name="q8" value="vero"> Vero<br>
+            <input type="radio" name="q8" value="falso"> Falso
+        </div>
+        <div class="mb-3">
+            <p>9. XML è un formato di markup che non consente la rappresentazione di dati complessi. </p>
+            <input type="radio" name="q9" value="vero"> Vero<br>
+            <input type="radio" name="q9" value="falso"> Falso
+        </div>
+        <div class="mb-3">
+            <p>10. I file CSV possono essere facilmente manipolati con librerie come pandas in Python. </p>
+            <input type="radio" name="q10" value="vero"> Vero<br>
+            <input type="radio" name="q10" value="falso"> Falso
+        </div>
+        <button type="button" class="btn btn-primary" onclick="controllaRisposte()">Invia Risposte</button>
+    </form>
+    <div id="risultato" style="display: none;">
+        <h3>Risultato: <span id="punteggio"></span>/10</h3>
+        <p id="feedback"></p>
+        <p id="invitoIscrizione">Se ti è piaciuto questo questionario,  iscriviti al portale Questionari. Una volta alla settimana saranno caricati questionari di cultura generale. Buon divertimento!</p>
+
+        <a href="../questionario/login.html" id="linkIscrizione" target="_blank">Iscriviti al portale per più questionari!</a>
+    </div>
+</div>
+
+<script>
+function controllaRisposte() {
+    const form = document.getElementById('questionarioForm');
+    const risultato = document.getElementById('risultato');
+
+    const invitoIscrizione = document.getElementById('invitoIscrizione');
+    const linkIscrizione = document.getElementById('linkIscrizione');
+
+    const risposteCorrette = {
+        q1: 'falso', q2: 'falso', q3: 'falso', q4: 'vero', q5: 'falso',
+        q6: 'vero', q7: 'falso', q8: 'falso', q9: 'falso', q10: 'vero'
+    };
+    let punteggio = 0;
+    Object.keys(risposteCorrette).forEach(function(domanda) {
+        const rispostaSelezionata = document.querySelector(`input[name="${domanda}"]:checked`);
+        if (rispostaSelezionata && rispostaSelezionata.value === risposteCorrette[domanda]) {
+            punteggio++;
+        }
+    });
+    document.getElementById('punteggio').textContent = punteggio;
+    const feedback = document.getElementById('feedback');
+    switch (punteggio) {
+        case 10:
+            feedback.textContent = "Bravissimo!";
+            break;
+        case 9:
+            feedback.textContent = "Bravo!";
+            break;
+        case 8:
+            feedback.textContent = "Bravino!";
+            break;
+        case 7:
+            feedback.textContent = "C'è di meglio!";
+            break;
+        default:
+            feedback.textContent = "Non ti demoralizzare, naviga ancora nel sistema informativo e riprova.";
+            break;
+    }
+    form.style.display = 'none';
+    risultato.style.display = 'block';
+    invitoIscrizione.style.display = 'block'; // Mostra l'invito a iscriversi
+    linkIscrizione.style.display = 'block'; // Mostra il link di iscrizione
+
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
