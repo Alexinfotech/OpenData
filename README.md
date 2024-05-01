@@ -49,6 +49,15 @@ Il file `main.html` contiene il corpo principale del sito web, ovvero il contenu
 
 Questo file rappresenta la pagina principale del sito web. Include una breve introduzione al progetto e ai suoi obiettivi.
 
+# Dipendenze Bootstrap
+
+Il progetto del Sistema Informativo Open Data utilizza Bootstrap per la creazione di un'interfaccia web moderna e responsiva. Tuttavia, nel codice fornito non è stata aggiunta una dipendenza esplicita per jQuery, poiché Bootstrap 4 ha rimosso la dipendenza diretta da jQuery. Pertanto, è probabile che la versione di Bootstrap utilizzata sia la 4.x, che elimina la necessità di jQuery per funzionare. 
+
+Bootstrap 4.x offre molte funzionalità senza l'utilizzo di jQuery, consentendo di utilizzare JavaScript nativo o altre librerie JavaScript al suo posto. Questo rende il progetto più leggero e migliora le prestazioni complessive dell'applicazione web.
+
+Se necessiti ulteriori informazioni sulla versione specifica di Bootstrap utilizzata nel progetto o su eventuali personalizzazioni apportate, ti consiglio di controllare i file CSS e JavaScript importati nel documento HTML fornito.
+
+
 Si prega di fare riferimento a ciascun file per ulteriori dettagli sulla sua struttura e il suo scopo.
 
 Grazie per l'attenzione.
